@@ -1,49 +1,47 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
-// import { Button, ButtonGroup } from 'react-bootstrap';
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const DivLayout = styled.div`
-  //margin: 0 auto;
-  //max-width: 500px;
-  font-family: sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 
-  & .heading {
-    color: rebeccapurple;
-  }
+  max-width: 720px;
 
-  & .nav-links {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-  }
-
-  & .nav-link-item {
-    padding-right: 2rem;
-  }
-
-  & .nav-link-text {
-    color: gray;
-  }
 `;
 
 const Layout = ({ pageTitle, children }) => {
   return (
     <DivLayout>
-      <nav>
-        <ul className={'nav-links'}>
-          <li className={'nav-link-item'}>
-            <Link to="/" className={'nav-link-text'}>
-              Home
-            </Link>
-          </li>
-          <li className={'nav-link-item'}>
-            <Link to="/about" className={'nav-link-text'}>
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="/">Gatsby React-Bootstrap</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
       <main>
         <h1 className={'heading'}>{pageTitle}</h1>
         {children}
