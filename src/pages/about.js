@@ -13,13 +13,25 @@ const AboutPage = () => {
   const onClickBttn = () => {
     setCount(count + 1);
   };
+
+  const onClickReset = () => {
+    setCount(0);
+  };
+
   return (
     <Layout pageTitle={"About me"}>
       <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
-      <StaticImage alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera" src="../images/icon.png" />
+      <div>
+        <StaticImage alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera" src="../images/icon.png" />
+      </div>
+
       <Button variant={"danger"} onClick={onClickBttn}>
-        click
+        Button
       </Button>
+      <Button variant={"info"} onClick={onClickReset}>
+        Reset
+      </Button>
+
       <h1>Count: {count}</h1>
     </Layout>
   );

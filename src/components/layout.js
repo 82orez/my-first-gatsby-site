@@ -12,6 +12,10 @@ const DivLayout = styled.div`
   box-sizing: border-box;
 
   max-width: 720px;
+  
+  button {
+    width: 100px;
+  }
 `;
 
 const Layout = ({ pageTitle, children }) => {
