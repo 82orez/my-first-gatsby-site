@@ -15,6 +15,8 @@ const DivLayout = styled.div`
   
   button {
     width: 100px;
+    
+    margin-top: 20px;
   }
 `;
 
